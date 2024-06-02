@@ -1,6 +1,6 @@
 # AirBnB clone - MySQL
 
-> This directory contains all the tasks of the project "0x02. AirBnB clone - MySQL" at [Holberton School](https://www.holbertonschool.com "Holberton School.")
+> This directory contains all the tasks of the project "0x02. AirBnB clone - MySQL"
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/luismvargasg/AirBnB_clone_v2?style=for-the-badge) ![GitHub last commit](https://img.shields.io/github/last-commit/luismvargasg/AirBnB_clone_v2?style=for-the-badge) ![GitHub contributors](https://img.shields.io/github/contributors/luismvargasg/AirBnB_clone_v2?style=for-the-badge) [![Luis Miguel Vargas](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fluismvargasg1)](https://twitter.com/luismvargasg1) [![Robinson Montes](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fmecomontes)](https://twitter.com/mecomontes)
 
