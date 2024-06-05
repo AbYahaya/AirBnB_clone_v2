@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
-Created on Mon Aug 13 14:21:54 2020
-@author: Robinson Montes
+Ab Yahaya deploy static to server
 """
 from fabric.api import local, put, run, env
 from datetime import datetime
@@ -41,7 +40,7 @@ def do_deploy(archive_path):
         run('rm -rf {}/web_static'.format(path))
         run('rm -rf {}'.format(current))
         run('ln -s {} {}'.format(path, current))
-        print('New version deployed!')
+        print('Latest version deployed!')
         return True
     except:
         return False
@@ -53,4 +52,5 @@ def deploy():
     """
     archive_path = do_pack()
     answer = do_deploy(archive_path)
+    print('Latest version deployed to server')
     return answer
