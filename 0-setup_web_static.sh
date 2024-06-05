@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # Script that sets up your web servers for the deployment of web_static.
 
+sudo apt-get remove nginx nginx-common nginx-full
+sudo apt-get purge nginx nginx-common nginx-full
+sudo rm -rf /etc/nginx
 sudo apt-get update
 sudo apt-get -y install nginx
 sudo mkdir -p /data/web_static/shared/
