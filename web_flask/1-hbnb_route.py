@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
-Created on Tue Sep  1 11:15:54 2020
-
-@author: Robinson Montes
+Ab Yahaya
 """
 from flask import Flask
 app = Flask(__name__)
