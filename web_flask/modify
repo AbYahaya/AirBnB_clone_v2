@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-for file in *.py; do
-  sed -i 's/@author: Robinson Montes/Ab Yahaya/g' "$file"
-done
