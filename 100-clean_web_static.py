@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
-Created on Mon Aug 13 14:21:54 2020
-@author: Robinson Montes
+Ab Yahaya
 """
 from fabric.api import local, put, run, env, cd, lcd
 from datetime import datetime
+import os
 
 env.user = 'ubuntu'
-env.hosts = ['35.227.35.75', '100.24.37.33']
+env.hosts = ['54.224.18.138', '18.206.198.235']
 
 
 def do_pack():
@@ -52,25 +52,36 @@ def deploy():
     A function to call do_pack and do_deploy
     """
     archive_path = do_pack()
-    answer = do_deploy(archive_path)
-    return answer
-
+    if archive_path:
+        return do_deploy(archive_path)
+    return False
 
 def do_clean(number=0):
     """
-    Keep it cleanning the repositories
+    Deletes out-of-date archives
     """
-    if number == 0 or number == 1:
-        with lcd('./versions/'):
-            local("ls -lv | rev | cut -f 1 | rev | \
-            head -n +1 | xargs -d '\n' rm -rf")
-        with cd('/data/web_static/releases/'):
-            run("sudo ls -lv | rev | cut -f 1 | \
-            rev | head -n +1 | xargs -d '\n' rm -rf")
-    else:
-        with lcd('./versions/'):
-            local("ls -lv | rev | cut -f 1 | rev | \
-            head -n +{} | xargs -d '\n' rm -rf".format(number))
-        with cd('/data/web_static/releases/'):
-            run("sudo ls -lv | rev | cut -f 1 | \
-            rev | head -n +{} | xargs -d '\n' rm -rf".format(number))
+    number = int(number)
+    if number <= 1:
+        number = 1
+
+    # Local cleanup
+    with lcd("versions"):
+        archives = sorted(os.listdir("."))
+        archives_to_delete = archives[:-number]
+
+        print("Archives to delete locally:", archives_to_delete)
+
+        for archive in archives_to_delete:
+            local("rm -f {}".format(archive))
+            print("Deleted local archive:", archive)
+
+    # Remote cleanup
+    with cd("/data/web_static/releases"):
+        archives = run("ls -t | grep web_static_").split()
+        archives_to_delete = archives[number:]
+
+        print("Archives to delete remotely:", archives_to_delete)
+
+        for archive in archives_to_delete:
+            run("rm -rf {}".format(archive))
+            print("Deleted remote archive:", archive)

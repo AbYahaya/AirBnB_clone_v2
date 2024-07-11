@@ -51,6 +51,6 @@ def deploy():
     A function to call do_pack and do_deploy
     """
     archive_path = do_pack()
-    answer = do_deploy(archive_path)
-    print('Latest version deployed to server')
-    return answer
+    if archive_path:
+        return do_deploy(archive_path)
+    return False
