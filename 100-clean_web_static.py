@@ -67,21 +67,21 @@ def do_clean(number=0):
     # Local cleanup
     with lcd("versions"):
         archives = sorted(os.listdir("."))
-        archives_to_delete = archives[:-number]
+        archives_to_delete_local = archives[:-number]
 
-        print("Archives to delete locally:", archives_to_delete)
+        print("Archives to delete locally:", archives_to_delete_local)
 
-        for archive in archives_to_delete:
+        for archive in archives_to_delete_local:
             local("rm -f {}".format(archive))
             print("Deleted local archive:", archive)
 
     # Remote cleanup
     with cd("/data/web_static/releases"):
         archives = run("ls -t | grep web_static_").split()
-        archives_to_delete = archives[number:]
+        archives_to_delete_remote = archives[number:]
 
-        print("Archives to delete remotely:", archives_to_delete)
+        print("Archives to delete remotely:", archives_to_delete_remote)
 
-        for archive in archives_to_delete:
+        for archive in archives_to_delete_remote:
             run("rm -rf {}".format(archive))
             print("Deleted remote archive:", archive)
