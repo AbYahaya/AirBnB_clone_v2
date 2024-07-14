@@ -40,7 +40,7 @@ The first step that we need to build is "the console" or the command interpreter
 
 This storage engine will give us an abstraction between “My object” and “How they are stored and persisted”.
 
-You can find this in: [AirBnB clone - The console](https://github.com/luismvargasg/AirBnB_clone)
+You can find this in: [AirBnB clone - The console](https://github.com/AbYahaya/AirBnB_clone)
 
 For the second part of the project we should build the database connection through SQLAlchemy, the ORM of Python.
 
@@ -78,20 +78,6 @@ This program was made and tested using Ubuntu 14.04.3 LTS and Python 3.4.3 So we
 
 ## AUTHORS
 
-**Luis Miguel Vargas**
+**Abdulrauf Yahaya**
 
-* [Github @luismvargasg](https://github.com/luismvargasg)
-* [LinkedIn - Luis Miguel Vargas](https://www.linkedin.com/in/luismvargasg/)
-
-**Robinson Montes**
-
-* [Github @mecomonteshbtn](https://github.com/mecomonteshbtn)
-* [LinkedIn - Robinson Montes Gómez](https://www.linkedin.com/in/robinson-montes-g%C3%B3mez/)
-
-## License
-
-Opensource project.
-
-## Acknowledgments
-
-* Project made at Holberton School - Colombia
+* [Github @AbYahaya](https://github.com/AbYahaya)
