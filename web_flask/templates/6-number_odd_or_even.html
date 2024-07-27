@@ -6,7 +6,10 @@
         <TITLE>HBNB</TITLE>
     </HEAD>
     <BODY>
-	    <H1>Number: {{ n }}</H1>
-	    <H>Number: {{ number }} is {{ decision }}</H>
+    {% if n is even %}
+        <H1>Number: {{ n }} is even</H1>
+    {% else %}
+        <H1>Number: {{ n }} is odd</H1>
+    {% endif %}
     </BODY>
 </HTML>
