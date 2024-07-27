@@ -12,6 +12,7 @@ def hello():
     """Start a basic Flask web application"""
     return 'Hello HBNB!'
 
+
 @app.route("/hbnb", strict_slashes=False)
 def hbnb():
     """Returns the hbnb page"""
