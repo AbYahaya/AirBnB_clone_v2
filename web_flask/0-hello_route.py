@@ -1,14 +1,15 @@
 #!/usr/bin/python3
-from flask import Flask
-""""
-A script that starts a flask app
+# -*- coding: utf-8 -*-
 """
+A basic flask app
+"""
+from flask import Flask
 app = Flask(__name__)
 
 
-@app.route("/", strict_slashes=False)
-def index():
-    """defines the home route"""
+@app.route('/', strict_slashes=False)
+def hello():
+    """Start a basic Flask web application"""
     return 'Hello HBNB!'
 
 
