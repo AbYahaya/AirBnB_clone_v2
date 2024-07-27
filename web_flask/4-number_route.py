@@ -31,6 +31,7 @@ def python_text(text='is cool'):
     """Dynamically generated route, with space replacing underscores"""
     return "Python " + text.replace("_", " ")
 
+
 @app.route("/number/<int:n>", strict_slashes=False)
 def number_n(n):
      """Handles the route /number/<n> only if n is an integer"""
