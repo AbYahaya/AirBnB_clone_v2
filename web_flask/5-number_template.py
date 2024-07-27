@@ -32,16 +32,16 @@ def python_text(text='is cool'):
     return "Python " + text.replace("_", " ")
 
 
-@app.route("/number/<int:n>", strict_slashes=False)
-def number_n(n=None):
-     """Handles the route /number/<n> only if n is an integer"""
-     return "{} is a number".format(n)
+@app.route('/number/<int:n>', strict_slashes=False)
+def only_digits_dynamic(n=None):
+    """Dynamic inputted integer"""
+    return "{} is a number".format(n)
 
 
 @app.route('/number_template/<int:n>', strict_slashes=False)
-def number_template(n=None):
-    """Rendering a page when n is an int"""
-    return render_template('5-number.html', number=n)
+def first_template(n=None):
+    """Display a HTML page only if n is an integer"""
+    return render_template('5-number.html', n=n)
 
 
 if __name__ == '__main__':
